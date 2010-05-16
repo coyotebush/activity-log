@@ -1,15 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  start: 2010-05-16 10:08:46
-  end: 2010-05-16 10:08:46
+  start_time: 2010-05-16 10:08:46
+  end_time: 2010-05-16 10:08:46
   distance: 1.5
   activity_type: MyString
   note: MyString
 
 two:
-  start: 2010-05-16 10:08:46
-  end: 2010-05-16 10:08:46
+  start_time: 2010-05-16 10:08:46
+  end_time: 2010-05-16 10:08:46
   distance: 1.5
   activity_type: MyString
   note: MyString
