@@ -1,0 +1,28 @@
+<p>
+  <b>Start:</b>
+  <%=h @activity.start %>
+</p>
+
+<p>
+  <b>End:</b>
+  <%=h @activity.end %>
+</p>
+
+<p>
+  <b>Distance:</b>
+  <%=h @activity.distance %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%=h @activity.type %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%=h @activity.note %>
+</p>
+
+
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>
