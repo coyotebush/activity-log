@@ -24,6 +24,7 @@ Rails::Initializer.run do |config|
              :lib => "inherited_resources",
              :version => "0.9.0",
              :source => "http://gems.github.com"
+  config.gem "easy_dates", :version => "0.1.1", :source => "http://rubygems.org"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

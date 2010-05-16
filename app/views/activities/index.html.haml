@@ -1,0 +1,31 @@
+%h1 Listing activities
+
+%table
+  %tr
+    %th Start
+    %th End
+    %th Distance
+    %th Type
+    %th Note
+  -@activities.each do |activity|
+    %tr
+      %td
+        = h activity.formatted_start_time 
+      %td
+        = h activity.formatted_end_time
+      %td
+        = h activity.distance
+      %td
+        = h activity.activity_type
+      %td
+        = h activity.note
+      %td
+        = link_to 'Show', activity
+      %td
+        = link_to 'Edit', edit_activity_path(activity)
+      %td
+        = link_to 'Destroy', activity, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New activity', new_activity_path
