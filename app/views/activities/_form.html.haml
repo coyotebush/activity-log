@@ -1,0 +1,15 @@
+%p
+  %label{:for => "activity_start_time"} Start time:
+  = f.datetime_select :start_time, :start_year => Time.now.year - 1, :end_year => Time.now.year, :default => 1.hour.ago
+%p
+  %label{:for => "activity_end_time"} End time:
+  = f.datetime_select :end_time, :start_year => Time.now.year - 1, :end_year => Time.now.year
+%p
+  %label{:for => "activity_distance"} Distance:
+  = f.text_field :distance
+%p
+  %label{:for => "activity_activity_type"} Type:
+  = f.text_field :activity_type
+%p
+  %label{:for => "activity_note"} Note:
+  = f.text_field :note
