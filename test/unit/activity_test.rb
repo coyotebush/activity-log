@@ -28,5 +28,9 @@ class ActivityTest < ActiveSupport::TestCase
     assert_in_delta 3.23333, activities(:two).elapsed, 0.00001
     assert_equal activities(:three).elapsed, 3.0
   end
+
+  test "should calculate average speed" do
+    assert_equal activities(:three).average_speed, 0.5
+    assert_equal activities(:piano).average_speed, 8.5
   end
 end

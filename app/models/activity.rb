@@ -5,10 +5,9 @@ class Activity < ActiveRecord::Base
   def elapsed
     (end_time - start_time) / 3600
   end
-  end
 
-  def formatted_distance
-    "%.2f" % distance unless distance.nil?
+  def average_speed
+    distance / elapsed unless distance.nil?
   end
 
   def must_start_before_ending

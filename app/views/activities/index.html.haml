@@ -6,6 +6,7 @@
     %th End
     %th Elapsed
     %th Distance
+    %th Speed
     %th Type
     %th Note
   -@activities.each do |activity|
@@ -17,7 +18,9 @@
       %td
         = h time_format(activity.elapsed)
       %td
-        = h activity.formatted_distance
+        = h decimal_format(activity.distance)
+      %td
+        = h decimal_format(activity.average_speed)
       %td
         = h activity.activity_type
       %td

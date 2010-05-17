@@ -14,3 +14,9 @@ three:
   activity_type: MyString
   note: MyString
 
+piano:
+  start_time: 2010-05-11 14:27
+  end_time: 2010-05-11 14:51
+  distance: 3.4
+  activity_type: Biking
+  note: from piano lesson
