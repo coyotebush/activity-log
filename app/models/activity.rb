@@ -3,10 +3,8 @@ class Activity < ActiveRecord::Base
   validate :must_start_before_ending
 
   def elapsed
-    difference = end_time - start_time
-    hours = (difference / 3600).to_i
-    minutes = "%02d" % ((difference % 3600) / 60).to_i
-    "#{hours}:#{minutes}"
+    (end_time - start_time) / 3600
+  end
   end
 
   def formatted_distance

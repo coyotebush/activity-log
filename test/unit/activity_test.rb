@@ -22,7 +22,8 @@ class ActivityTest < ActiveSupport::TestCase
   end
 
   test "should calculate elapsed time" do
-    assert_equal activities(:two).elapsed, "3:14"
-    assert_equal activities(:three).elapsed, "3:00"
+    assert_in_delta 3.23333, activities(:two).elapsed, 0.00001
+    assert_equal activities(:three).elapsed, 3.0
+  end
   end
 end
