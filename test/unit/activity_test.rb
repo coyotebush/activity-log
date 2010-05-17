@@ -20,4 +20,9 @@ class ActivityTest < ActiveSupport::TestCase
     @activity = Activity.new :start_time => "2010-05-16 10:08:46", :end_time => "2010-05-16 10:54:13"
     assert @activity.valid?
   end
+
+  test "should calculate elapsed time" do
+    assert_equal activities(:two).elapsed, "3:14"
+    assert_equal activities(:three).elapsed, "3:00"
+  end
 end

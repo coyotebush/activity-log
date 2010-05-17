@@ -4,6 +4,7 @@
   %tr
     %th Start
     %th End
+    %th Elapsed
     %th Distance
     %th Type
     %th Note
@@ -15,6 +16,8 @@
         = h activity.formatted_end_time
       %td
         = h activity.distance
+        = h activity.elapsed
+      %td
       %td
         = h activity.activity_type
       %td
