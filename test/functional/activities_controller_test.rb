@@ -4,12 +4,6 @@ class ActivitiesControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:activities)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
   end
 
   test "should create activity" do
@@ -17,22 +11,12 @@ class ActivitiesControllerTest < ActionController::TestCase
       post :create, :activity => { :start_time => "2010-05-16 10:08:46", :end_time => "2010-05-16 10:08:46"  }
     end
 
-    assert_redirected_to activity_path(assigns(:activity))
-  end
-
-  test "should show activity" do
-    get :show, :id => activities(:one).to_param
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, :id => activities(:one).to_param
-    assert_response :success
+    assert_redirected_to activities_path
   end
 
   test "should update activity" do
     put :update, :id => activities(:one).to_param, :activity => { }
-    assert_redirected_to activity_path(assigns(:activity))
+    assert_redirected_to activities_path
   end
 
   test "should destroy activity" do
