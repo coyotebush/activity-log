@@ -2,7 +2,7 @@ class ActivitiesController < ApplicationController
   # GET /activities
   # GET /activities.xml
   def index
-    @activities = Activity.all
+    @activities = Activity.find(:all, :order => 'start_time DESC')
 
     respond_to do |format|
       format.html # index.html.erb
