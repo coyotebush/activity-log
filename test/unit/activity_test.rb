@@ -14,6 +14,9 @@ class ActivityTest < ActiveSupport::TestCase
     # Must start before it ends
     @activity = Activity.new :start_time => "2010-05-16 10:08:46", :end_time => "2010-05-16 8:08:23"
     assert !@activity.valid?
+
+    @activity = Activity.new :start_time => "2010-05-16 10:08:46", :end_time => "2010-05-16 10:08:46"
+    assert !@activity.valid?
   end
 
   test "should be valid" do
