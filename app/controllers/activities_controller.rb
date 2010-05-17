@@ -6,4 +6,8 @@ class ActivitiesController < InheritedResources::Base
   def update
     update! { activities_url }
   end
+  protected
+    def collection
+      @activities ||= end_of_association_chain.find(:all, :order => 'start_time DESC')
+    end
 end
