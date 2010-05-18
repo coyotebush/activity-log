@@ -21,9 +21,9 @@
       %td
         = h time_format(activity.elapsed)
       %td
-        = h decimal_format(activity.distance)
+        = h number_with_precision(activity.distance, :precision => 2)
       %td
-        = h decimal_format(activity.average_speed)
+        = h number_with_precision(activity.average_speed, :precision => 2)
       %td
         = h activity.activity_type
       %td

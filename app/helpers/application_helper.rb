@@ -4,8 +4,4 @@ module ApplicationHelper
     minutes = "%02d" % ((hours - hours.truncate) * 60).to_i
     "#{hours.to_i}:#{minutes}"
   end
-
-  def decimal_format(x)
-    "%.2f" % x if x.is_a? Numeric
-  end
 end
