@@ -7,9 +7,7 @@
   %tr
     %th Start
     %th End
-    %th Elapsed
     %th Distance
-    %th Speed
     %th Type
     %th Note
   -@activities.each do |activity|
@@ -19,11 +17,7 @@
       %td
         = h activity.formatted_end_time
       %td
-        = h time_format(activity.elapsed)
-      %td
         = h number_with_precision(activity.distance, :precision => 2)
-      %td
-        = h number_with_precision(activity.average_speed, :precision => 2)
       %td
         = h activity.activity_type
       %td
