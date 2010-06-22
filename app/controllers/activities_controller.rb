@@ -1,5 +1,6 @@
 class ActivitiesController < InheritedResources::Base
   actions :all, :except => :show
+  respond_to :html, :xml
   def create
     create! { activities_url }
   end
