@@ -1,3 +1,11 @@
 %h1 Generate reports
 
-= link_to 'Report', :controller => "reports", :action => "report"
+- form_tag({:action => "report"}, {:method => "get"}) do
+  %p
+    From date:
+    = select_date 7.days.ago, :prefix => 'first'
+  %p
+    To date:
+    = select_date DateTime.now, :prefix => 'last'
+  %p
+    = submit_tag "Generate"
