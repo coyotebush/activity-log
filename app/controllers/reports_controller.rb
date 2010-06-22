@@ -3,11 +3,15 @@ class ReportsController < ApplicationController
   end
 
   def report
-    @start_date = parse_select_date(params[:first])
-    @end_date = parse_select_date(params[:last])
-    @activities = Activity.find(:all,
-      :conditions => ['start_time BETWEEN ? AND ?', @start_date, @end_date],
-      :order => 'start_time')
+    if params[:first].nil? or params[:last].nil?
+      @activities = Activity.find(:all, :order => 'start_time')
+    else
+      @start_date = parse_select_date(params[:first])
+      @end_date = parse_select_date(params[:last])
+      @activities = Activity.find(:all,
+        :conditions => ['start_time BETWEEN ? AND ?', @start_date, @end_date],
+        :order => 'start_time')
+    end
   end
 
   private
