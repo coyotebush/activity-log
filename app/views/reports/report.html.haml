@@ -1,7 +1,7 @@
 %h1 Report
 
 
-%table
+%table#report
   %tr
     %th Start
     %th End
@@ -23,3 +23,10 @@
         = h number_with_precision(activity.average_speed, :precision => 2)
       %td
         = h activity.activity_type
+  %tr#overall-totals
+    %th Total
+    %th
+    %th
+      = h time_format(Activity.sum_elapsed)
+    %th
+      = h number_with_precision(Activity.sum(:distance), :precision => 2)

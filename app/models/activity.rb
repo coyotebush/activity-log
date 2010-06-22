@@ -6,6 +6,12 @@ class Activity < ActiveRecord::Base
     (end_time - start_time) / 3600
   end
 
+  def Activity.sum_elapsed
+    sum = 0
+    Activity.find(:all).each {|a| sum += a.elapsed}
+    sum
+  end
+
   def average_speed
     distance / elapsed unless distance.nil?
   end
