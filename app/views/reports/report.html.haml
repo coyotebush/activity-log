@@ -27,6 +27,6 @@
     %th Total
     %th
     %th
-      = h time_format(Activity.sum_elapsed)
+      = h time_format(@total_time)
     %th
-      = h number_with_precision(Activity.sum(:distance), :precision => 2)
+      = h number_with_precision(@total_distance, :precision => 2)
