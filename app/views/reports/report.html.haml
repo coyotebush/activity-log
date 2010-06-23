@@ -9,20 +9,25 @@
     %th Distance
     %th Speed
     %th Type
-  -@activities.each do |activity|
+  -@weeks.each do |week, activities|
     %tr
-      %td
-        = h activity.formatted_start_time
-      %td
-        = h activity.formatted_end_time
-      %td
-        = h time_format(activity.elapsed)
-      %td
-        = h number_with_precision(activity.distance, :precision => 2)
-      %td
-        = h number_with_precision(activity.average_speed, :precision => 2)
-      %td
-        = h activity.activity_type
+      %th
+        Week
+        = week
+    -activities.each do |activity|
+      %tr
+        %td
+          = h activity.formatted_start_time
+        %td
+          = h activity.formatted_end_time
+        %td
+          = h time_format(activity.elapsed)
+        %td
+          = h number_with_precision(activity.distance, :precision => 2)
+        %td
+          = h number_with_precision(activity.average_speed, :precision => 2)
+        %td
+          = h activity.activity_type
   %tr#overall-totals
     %th Total
     %th
