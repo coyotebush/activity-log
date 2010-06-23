@@ -10,8 +10,8 @@ class ReportsController < ApplicationController
       @activities = Activity.find(:all, :order => 'start_time')
     else
       @activities = Activity.find(:all,
-        :conditions => ['start_time BETWEEN ? AND ?', @start_date, @end_date],
-        :order => 'start_time')
+        :conditions => { :start_time => @start_date..@end_date },
+        :order => :start_time)
     end
     @total_time     = @activities.sum_numbers(&:elapsed)
     @total_distance = @activities.sum_numbers(&:distance)
