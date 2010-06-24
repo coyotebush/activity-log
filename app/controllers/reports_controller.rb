@@ -3,21 +3,21 @@ class ReportsController < ApplicationController
   end
 
   def report
-    @start_date = parse_select_date(params[:first])
-    @end_date = parse_select_date(params[:last])
+    start_date = parse_select_date(params[:first])
+    end_date = parse_select_date(params[:last])
 
     # Get data
-    if @start_date.nil? or @end_date.nil?
+    if start_date.nil? or end_date.nil?
       @activities = Activity.find(:all, :order => 'start_time')
-      @start_date = @activities.map(&:start_time).min
+      start_date = @activities.map(&:start_time).min
     else
       @activities = Activity.find(:all,
-        :conditions => { :start_time => @start_date..@end_date },
+        :conditions => { :start_time => start_date..end_date },
         :order => :start_time)
     end
 
     # Group into weeks
-    @weeks = @activities.group_by {|a| ((a.start_time - @start_date) / 604800).floor }
+    @weeks = @activities.group_by {|a| ((a.start_time - start_date) / 604800).floor }
 
     # Final totals
     @total_time     = @activities.sum_numbers(&:elapsed)
