@@ -1,5 +1,7 @@
 class Activity < ActiveRecord::Base
   validates_presence_of :start_time, :end_time
+  validates_numericality_of :distance, :allow_nil => true,
+                            :greater_than_or_equal_to => 0
   validate :must_start_before_ending
 
   def elapsed
