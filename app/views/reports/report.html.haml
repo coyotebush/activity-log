@@ -9,12 +9,8 @@
     %th Distance
     %th Speed
     %th Type
-  -@weeks.each do |week, activities|
-    %tr
-      %th
-        Week
-        = week
-    -activities.each do |activity|
+  -@weeks.each do |data|
+    -data[:activities].each do |activity|
       %tr
         %td
           = h activity.formatted_start_time
@@ -28,6 +24,13 @@
           = h number_with_precision(activity.average_speed, :precision => 2)
         %td
           = h activity.activity_type
+    %tr
+      %th Week totals
+      %th
+      %th
+        = h time_format(data[:totals][:time])
+      %th
+        = h number_with_precision(data[:totals][:distance], :precision => 2)
   %tr#overall-totals
     %th Total
     %th

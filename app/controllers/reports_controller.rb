@@ -17,7 +17,14 @@ class ReportsController < ApplicationController
     end
 
     # Group into weeks
-    @weeks = @activities.group_by {|a| ((a.start_time - start_date) / 604800).floor }
+    @weeks = @activities.group_by do |a|
+      ((a.start_time - start_date) / 604800).floor
+    end.values.map do |week_activities|
+      { :activities => week_activities,
+        :totals =>
+        { :time     => week_activities.sum_numbers(&:elapsed),
+          :distance => week_activities.sum_numbers(&:distance) } }
+    end
 
     # Final totals
     @total_time     = @activities.sum_numbers(&:elapsed)
