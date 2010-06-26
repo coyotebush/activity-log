@@ -25,6 +25,7 @@ Rails::Initializer.run do |config|
              :version => "0.9.0",
              :source => "http://gems.github.com"
   config.gem "easy_dates", :version => "0.1.1", :source => "http://rubygems.org"
+  config.gem "authlogic"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

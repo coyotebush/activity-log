@@ -1,11 +1,5 @@
-%h1 Editing activity
+- title "Editing activity"
 
-= error_messages_for :activity
+= render @activity
 
-- form_for(:activity, :url => @activity, :html => { :method => :put }) do |f|
-  = render :partial => "form", :locals => {:f => f}
-  %p= submit_tag 'Update'
-
-= link_to 'Show', @activity
-|
 = link_to 'Back', activities_path

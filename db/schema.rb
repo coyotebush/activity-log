@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100516180219) do
+ActiveRecord::Schema.define(:version => 20100626033901) do
 
   create_table "activities", :force => true do |t|
     t.datetime "start_time"
@@ -17,6 +17,16 @@ ActiveRecord::Schema.define(:version => 20100516180219) do
     t.float    "distance"
     t.string   "activity_type"
     t.string   "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.string   "perishable_token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

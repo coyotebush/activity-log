@@ -1,4 +1,5 @@
 class ActivitiesController < InheritedResources::Base
+  before_filter 'require_user'
   actions :all, :except => :show
   respond_to :html, :xml
   def create

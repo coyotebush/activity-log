@@ -1,0 +1,19 @@
+- form_for @activity do |f|
+  = f.error_messages
+  %p
+    Start time:
+    = recent_datetime_select(f, :start_time, :default => 1.hour.ago)
+  %p
+    End time:
+    = recent_datetime_select(f, :end_time)
+  %p
+    = f.label :distance, "Distance:"
+    = f.text_field :distance
+  %p
+    = f.label :activity_type, "Type:"
+    = f.text_field :activity_type
+  %p
+    = f.label :note, "Note:"
+    = f.text_field :note
+  %p
+    = f.submit "Submit"

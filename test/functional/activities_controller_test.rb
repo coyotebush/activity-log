@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class ActivitiesControllerTest < ActionController::TestCase
+  def setup
+    activate_authlogic
+    UserSession.create(users(:ben))
+  end
+
   test "should get index" do
     get :index
     assert_response :success

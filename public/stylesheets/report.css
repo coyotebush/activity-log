@@ -1,8 +1,0 @@
-#report {
-	border-collapse: collapse;
-}
-#report td, #report th {
-	padding: .1em 1em;
-}
-#report #subtotals { background-color: #CCF }
-#report #totals    { background-color: #C9F }
