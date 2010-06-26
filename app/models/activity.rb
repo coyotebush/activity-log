@@ -12,6 +12,10 @@ class Activity < ActiveRecord::Base
     distance / elapsed unless distance.nil?
   end
 
+  def weeks_from some_date
+    ((self.start_time - some_date) / 604800).floor
+  end
+
   def must_start_before_ending
     if !end_time.nil? and !start_time.nil? and end_time <= start_time
       errors.add_to_base("End time cannot be before start time")

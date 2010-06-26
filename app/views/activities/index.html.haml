@@ -17,7 +17,7 @@
       %td
         = h activity.formatted_end_time
       %td
-        = h number_with_precision(activity.distance, :precision => 2)
+        = h decimal_format(activity.distance)
       %td
         = h activity.activity_type
       %td

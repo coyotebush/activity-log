@@ -19,22 +19,20 @@
         %td
           = h time_format(activity.elapsed)
         %td
-          = h number_with_precision(activity.distance, :precision => 2)
+          = h decimal_format(activity.distance)
         %td
-          = h number_with_precision(activity.average_speed, :precision => 2)
+          = h decimal_format(activity.average_speed)
         %td
           = h activity.activity_type
-    %tr
-      %th Week totals
-      %th
-      %th
+    %tr#subtotals
+      %th{:colspan => 2} Week totals
+      %td
         = h time_format(data[:totals][:time])
-      %th
-        = h number_with_precision(data[:totals][:distance], :precision => 2)
-  %tr#overall-totals
-    %th Total
-    %th
-    %th
-      = h time_format(@total_time)
-    %th
-      = h number_with_precision(@total_distance, :precision => 2)
+      %td
+        = h decimal_format(data[:totals][:distance])
+  %tr#totals
+    %th{:colspan => 2} Total
+    %td
+      = h time_format(@totals[:time])
+    %td
+      = h decimal_format(@totals[:distance])

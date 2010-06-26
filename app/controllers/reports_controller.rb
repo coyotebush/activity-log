@@ -8,27 +8,29 @@ class ReportsController < ApplicationController
 
     # Get data
     if start_date.nil? or end_date.nil?
-      @activities = Activity.find(:all, :order => 'start_time')
-      start_date = @activities.map(&:start_time).min
+      activities = Activity.find(:all, :order => 'start_time')
+      start_date = activities.map(&:start_time).min
     else
-      @activities = Activity.find(:all,
+      activities = Activity.find(:all,
         :conditions => { :start_time => start_date..end_date },
         :order => :start_time)
     end
 
+    # Final totals
+    @totals = Hash.new
+    @totals[:time]     = activities.sum_numbers(&:elapsed)
+    @totals[:distance] = activities.sum_numbers(&:distance)
+
     # Group into weeks
-    @weeks = @activities.group_by do |a|
-      ((a.start_time - start_date) / 604800).floor
-    end.values.map do |week_activities|
+    @weeks = activities.group_by {|a| a.weeks_from start_date }.values
+
+    # Add subtotals
+    @weeks.map! do |week_activities|
       { :activities => week_activities,
         :totals =>
         { :time     => week_activities.sum_numbers(&:elapsed),
           :distance => week_activities.sum_numbers(&:distance) } }
     end
-
-    # Final totals
-    @total_time     = @activities.sum_numbers(&:elapsed)
-    @total_distance = @activities.sum_numbers(&:distance)
   end
 
   private
