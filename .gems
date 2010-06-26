@@ -1,0 +1,5 @@
+rails -v 2.3.8
+haml --version 3.0.12
+josevalim-inherited_resources --version 0.9.0 --source gems.github.com
+easy_dates --version 0.1.1 --source rubygems.org
+authlogic
