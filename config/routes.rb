@@ -1,10 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
-  map.login    'login',    :controller => 'user_sessions', :action => 'new'
+  map.connect  'login',    :controller => 'user_sessions', :action => 'create', :conditions => { :method => :post }
+  map.login    'login',    :controller => 'user_sessions', :action => 'new',    :conditions => { :method => :get }
   map.logout   'logout',   :controller => 'user_sessions', :action => 'destroy'
-  map.register 'register', :controller => 'users', :action => 'new'
-  map.account  'account',  :controller => 'users', :action => 'edit'
-  map.resources :user_sessions
-  map.resources :users
+
+  map.connect  'register', :controller => 'users', :action => 'create', :conditions => { :method => :post }
+  map.register 'register', :controller => 'users', :action => 'new',    :conditions => { :method => :get }
+
+  map.connect  'account',  :controller => 'users', :action => 'update', :conditions => { :method => :post }
+  map.account  'account',  :controller => 'users', :action => 'edit',   :conditions => { :method => :get }
+
   map.resources :activities
   map.connect 'reports/:action', :controller => 'reports'
 
