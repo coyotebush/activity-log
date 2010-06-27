@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+  before_filter 'require_user'
   before_filter 'find_activity', :only => [:edit, :update, :destroy]
 
   def index
