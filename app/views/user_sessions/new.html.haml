@@ -1,6 +1,6 @@
 - title "Log in"
 
-- form_for :user_session, :url => "/login" do |f|
+- form_for :user_session do |f|
   = f.error_messages
   %p
     = f.label :email, "Email:"
