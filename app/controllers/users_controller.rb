@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    if @user.save
+    if verify_recaptcha(:model => @user, :timeout => 3) && @user.save
       flash[:notice] = "Registration successful."
       redirect_to root_url
     else

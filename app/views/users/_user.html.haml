@@ -9,5 +9,8 @@
   %p
     = f.label :password_confirmation, "Confirm password:"
     = f.password_field :password_confirmation
+  - if @user.new_record?
+    %p
+      = recaptcha_tags
   %p
     = f.submit "Submit"
