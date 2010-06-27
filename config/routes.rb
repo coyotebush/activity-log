@@ -1,9 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
-  map.login 'login', :controller => 'user_sessions', :action => 'new'
-  map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
+  map.login    'login',    :controller => 'user_sessions', :action => 'new'
+  map.logout   'logout',   :controller => 'user_sessions', :action => 'destroy'
+  map.register 'register', :controller => 'users', :action => 'new'
+  map.account  'account',  :controller => 'users', :action => 'edit'
   map.resources :user_sessions
-  map.resources :activities
   map.resources :users
+  map.resources :activities
   map.connect 'reports/:action', :controller => 'reports'
 
 
