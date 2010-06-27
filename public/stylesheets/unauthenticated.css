@@ -1,0 +1,98 @@
+body {
+	background-color:#666;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#container {
+	width: 358px;
+	background-color:white;
+	margin: 1em auto;
+	padding: 0 0 1em 0;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius:10px;
+}
+
+#tabs {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+}
+
+#tabs td {
+	width: 50%;
+	margin: 0 10px;
+	padding: 5px 2px;
+	text-align: center;
+	background-color: #AAA;
+	font-weight: bold;
+	font-size: larger;
+}
+#tabs td:first-child {
+	border-top-left-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+}
+#tabs td:last-child {
+	border-top-right-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+}
+#tabs .selected {
+	background-color: white;
+}
+#tabs a {
+	color: black;
+	text-decoration: none;
+}
+
+#form {
+	margin: 20px;
+}
+
+label {
+	display: block;
+	font-size: smaller;
+}
+input {
+	display: block;
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  /*width: 400px;*/
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}

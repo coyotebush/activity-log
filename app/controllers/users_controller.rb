@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
+    render :layout => 'unauthenticated'
   end
 
   def edit
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Registration successful."
       redirect_to root_url
     else
-      render :action => 'new'
+      render :action => 'new', :layout => 'unauthenticated'
     end
   end
 end

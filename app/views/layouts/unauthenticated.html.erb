@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title><%= h yield(:title) %></title>
+    <%= stylesheet_link_tag 'unauthenticated' %>
+  </head>
+  <body>
+    <div id="container">
+      <table id="tabs">
+        <tr>
+          <td class="<%= current_page?(login_path) ? 'selected' : 'unselected' %>">
+            <%= link_to_unless_current "Login", login_path %>
+          </td>
+          <td class="<%= current_page?(register_path) ? 'selected' : 'unselected' %>">
+            <%= link_to_unless_current "Register", register_path %>
+          </td>
+        </tr>
+      </table>
+      <div id="form">
+<%= yield %>
+      </div>
+	</div>
+  </body>
+</html>
