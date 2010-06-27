@@ -1,4 +1,6 @@
 class Activity < ActiveRecord::Base
+  belongs_to :user
+
   validates_presence_of :start_time, :end_time
   validates_numericality_of :distance, :allow_nil => true,
                             :greater_than_or_equal_to => 0

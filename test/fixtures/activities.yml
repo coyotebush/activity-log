@@ -6,6 +6,7 @@ two:
   distance: 1.5
   activity_type: MyString
   note: MyString
+  user: ben
 
 three:
   start_time: 2010-05-16 10:08
@@ -13,6 +14,7 @@ three:
   distance: 1.5
   activity_type: MyString
   note: MyString
+  user: ben
 
 piano:
   start_time: 2010-05-11 14:27
@@ -20,3 +22,13 @@ piano:
   distance: 3.4
   activity_type: Biking
   note: from piano lesson
+  user: ben
+
+fun:
+  start_time: 2009-12-24 11:34
+  end_time: 2009-12-24 12:19
+  distance: 4.2
+  activity_type: Skiing
+  note:
+  user: fred
+

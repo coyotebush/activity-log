@@ -9,10 +9,10 @@ class ReportsController < ApplicationController
 
     # Get data
     if start_date.nil? or end_date.nil?
-      activities = Activity.find(:all, :order => 'start_time')
+      activities = current_user.activities.find(:all, :order => 'start_time')
       start_date = activities.map(&:start_time).min
     else
-      activities = Activity.find(:all,
+      activities = current_user.activities.find(:all,
         :conditions => { :start_time => start_date..end_date },
         :order => :start_time)
     end

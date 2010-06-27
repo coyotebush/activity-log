@@ -24,11 +24,25 @@ class ActivitiesControllerTest < ActionController::TestCase
     assert_redirected_to activities_path
   end
 
+  test "should not update activity" do
+    assert_raise ActiveRecord::RecordNotFound do
+      put :update, :id => activities(:fun).to_param, :activity => { }
+    end
+  end
+
   test "should destroy activity" do
     assert_difference('Activity.count', -1) do
       delete :destroy, :id => activities(:two).to_param
     end
 
     assert_redirected_to activities_path
+  end
+
+  test "should not destroy activity" do
+    assert_difference('Activity.count', 0) do
+      assert_raise ActiveRecord::RecordNotFound do
+        delete :destroy, :id => activities(:fun).to_param
+      end
+    end
   end
 end

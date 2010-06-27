@@ -20,10 +20,10 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "haml", :version => "3.0.12"
-  config.gem "josevalim-inherited_resources",
-             :lib => "inherited_resources",
-             :version => "0.9.0",
-             :source => "http://gems.github.com"
+  #config.gem "josevalim-inherited_resources",
+  #           :lib => "inherited_resources",
+  #           :version => "0.9.0",
+  #           :source => "http://gems.github.com"
   config.gem "easy_dates", :version => "0.1.1", :source => "http://rubygems.org"
   config.gem "authlogic"
 
