@@ -5,6 +5,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect  'register', :controller => 'users', :action => 'create', :conditions => { :method => :post }
   map.register 'register', :controller => 'users', :action => 'new',    :conditions => { :method => :get }
+  map.confirm  '/confirm/:code', :controller => 'users', :action => 'confirm'
 
   map.connect  'account',  :controller => 'users', :action => 'update', :conditions => { :method => :post }
   map.account  'account',  :controller => 'users', :action => 'edit',   :conditions => { :method => :get }
