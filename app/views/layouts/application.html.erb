@@ -9,7 +9,7 @@
   <body>
     <div id="container">
       <div id="user_nav">
-        <%= link_to "Edit Profile", account_path %> |
+        <b><%= link_to current_user.email, account_path %></b> |
         <%= link_to "Logout", logout_path %>
       </div>
       
